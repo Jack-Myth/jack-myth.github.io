@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.8.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.8.0" type="image/png" sizes="32x32"><meta name="description" content="Fedora,很好，并且界面也很花哨，先去设置里配置各种视觉效果，配的差不多了，也开始正式配置了。首先就是Fedora不是Debian系的系统，使用的包管理器不是apt而是yum(dnf)，所以deb软件是用不了的，这就导致了诸如搜狗输入法之类的软件都用不了了。搜了一下，搜狗输入法使用的是Fcitx4框架，已经比较老旧了，并且和Wayland不兼容（这个时候我才发现Fedora是默认使用Wayla">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置新系统">
+<meta property="og:url" content="https://jack-myth.github.io/2025/07/05/195940/">
+<meta property="og:site_name" content="JackMyth的垃圾场">
+<meta property="og:description" content="Fedora,很好，并且界面也很花哨，先去设置里配置各种视觉效果，配的差不多了，也开始正式配置了。首先就是Fedora不是Debian系的系统，使用的包管理器不是apt而是yum(dnf)，所以deb软件是用不了的，这就导致了诸如搜狗输入法之类的软件都用不了了。搜了一下，搜狗输入法使用的是Fcitx4框架，已经比较老旧了，并且和Wayland不兼容（这个时候我才发现Fedora是默认使用Wayla">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jack-myth.github.io/image/select-im.jpg">
+<meta property="og:image" content="https://jack-myth.github.io/image/virtual_keyboard_notice.jpg">
+<meta property="og:image" content="https://jack-myth.github.io/image/im-rime-list.jpg">
+<meta property="og:image" content="https://jack-myth.github.io/image/qqmusic0.jpg">
+<meta property="og:image" content="https://jack-myth.github.io/image/qqmusic1.jpg">
+<meta property="article:published_time" content="2025-07-05T19:59:40.000Z">
+<meta property="article:modified_time" content="2025-08-31T07:33:03.209Z">
+<meta property="article:author" content="JackMyth">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jack-myth.github.io/image/select-im.jpg"><title>配置新系统 | JackMyth的垃圾场</title><link ref="canonical" href="https://jack-myth.github.io/2025/07/05/195940/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":false},
+  postWidget: undefined,
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">配置新系统</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2025-07-06</span></span></div></header><div class="post-body"><p>Fedora,很好，并且界面也很花哨，先去设置里配置各种视觉效果，配的差不多了，也开始正式配置了。<br>首先就是Fedora不是Debian系的系统，使用的包管理器不是apt而是yum(dnf)，所以deb软件是用不了的，这就导致了诸如搜狗输入法之类的软件都用不了了。<br>搜了一下，搜狗输入法使用的是Fcitx4框架，已经比较老旧了，并且和Wayland不兼容（这个时候我才发现Fedora是默认使用Wayland的，ElementaryOS比之差了半条街啊）。所以干脆直接换掉，入乡随俗，用一下Fedora上推荐的输入法。  </p>
+
+        <h2 id="安装输入法"   >
+          <a href="#安装输入法" class="heading-link"><i class="fas fa-link"></i></a><a href="#安装输入法" class="headerlink" title="安装输入法"></a>安装输入法</h2>
+      <p>首先使用dnf安装fcitx5和rime</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install fcitx5 fcitx5-rime  # 输入法和rime</span><br><span class="line">sudo dnf install librime-lua  # rime需要用到的组件</span><br><span class="line">sudo dnf install fcitx5-gtk fcitx5-qt #针对GTK，QT的兼容组件</span><br></pre></td></tr></table></div></figure>
+<p>在安装完之后，安装雾凇拼音</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone --depth=1 https://github.com/iDvel/rime-ice.git</span><br></pre></td></tr></table></div></figure>
+<p>clone下来之后，把里面的东西都塞进<code>~/.local/share/fcitx5/rime/</code>文件夹里，这样雾凇拼音的配置就能生效了<br>然后在<strong>设置-&gt;键盘-&gt;虚拟键盘</strong>里选中<strong>Fcitx5 Waland</strong>。<br><img src="/image/select-im.jpg"><br>不知道为什么这个会叫“虚拟键盘”，但确实就是这么叫的，之前找了一圈没有找到，最后发现KDE面板里的输入法的提示叫“虚拟键盘”，想起来好像在那儿见过这个选项，才找到配置的地方，实在是有点抽象。<br><img src="/image/virtual_keyboard_notice.jpg"><br>选择Fitcx之后，就可以右键输入法设置按钮，打开Fitcx5的配置菜单了，把rime（中州韵）加入输入法列表，就大功告成了。<br>由于刚才已经将雾凇拼音的配置文件塞进了Rime，所以这个时候Rime的输入法列表里应该已经有了雾凇拼音的选项。<br><img src="/image/im-rime-list.jpg"><br>我实际在用的时候，发现在刚激活Fcitx5的时候这里全部都是英文，比如rime-ice,doublepinyin之类的，也没法打出字来，正在着急的时候发现它莫名其妙的自己好了。看起来是Rime会自动同步服务器上的一些文件，所以如果出现打不出字的情况可以稍微等一等看看。<br>Rime的配置文件和Fcitx5是分开的，直接调整Fcitx5里拼音的候选词是不起作用的，需要直接去Rime的配置文件里改：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.local/share/fcitx5/rime/default.yaml</span><br></pre></td></tr></table></div></figure>
+<p>改完之后需要重新激活Fcitx5才能生效。虚拟键盘切换到无，再切换回Fcitx5就可以了。<br>对于很多应用来说，需要设置环境变量：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">XIM=fcitx</span><br><span class="line">GTK_IM_MODULE=fcitx</span><br><span class="line">QT_IM_MODULE=fcitx</span><br><span class="line">XMODIFIERS=@im=fcitx</span><br></pre></td></tr></table></div></figure>
+<p>最后额外加一个<code>LANG=zh_CN.UTF-8</code>是Steam需要用到的，其他应用使用这四个就OK了。<br>使用的过程中发现部分应用会出现漏字，即打字的过程中有一部分文字不经输入法直接上屏的情况。这种情况不是因为打字过快，而是因为和Wayland的兼容有问题，需要进行特殊设置。<br>有两种方式，设置上文的  </p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GTK_IM_MODULE=fcitx</span><br></pre></td></tr></table></div></figure>
+<p>或者，打开<code>~/.config/gtk-3.0/settings.ini</code>配置文件，在里面的 <strong>[Settings]</strong> 一节里找到<strong>gtk-im-module</strong>一节，将它改为</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Settings]</span><br><span class="line">gtk-im-module = fcitx</span><br></pre></td></tr></table></div></figure>
+<p>然后漏字问题就不会再出现了  </p>
+<p>除此之外，这里也记录一下两个Rime词库的地址：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/felixonmars/fcitx5-pinyin-zhwiki   # 中文维基词库</span><br><span class="line">https://github.com/outloudvi/mw2fcitx    # 萌娘百科词库</span><br></pre></td></tr></table></div></figure>
+<p>在release页面，下载.dict.yml文件，然后放在这里：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$HOME/.local/share/fcitx5/rime/cn_dicts/</span><br></pre></td></tr></table></div></figure>
+<p>随后，打开雾凇拼音的配置文件</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$HOME/.local/share/fcitx5/rime/cn_dicts/rime_ice.dict.yaml</span><br></pre></td></tr></table></div></figure>
+<p>其中有import_tables一节，在下面把词库文件加进去就可以了。</p>
+
+        <h2 id="NVidia显卡驱动"   >
+          <a href="#NVidia显卡驱动" class="heading-link"><i class="fas fa-link"></i></a><a href="#NVidia显卡驱动" class="headerlink" title="NVidia显卡驱动"></a>NVidia显卡驱动</h2>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NVidia，FUCK YOU ！</span><br><span class="line">        ——Linus Torvalds</span><br></pre></td></tr></table></div></figure>
+<p>话虽如此，但现在的N卡驱动的安装过程比我预想中要稳定的多，曾经在使用ElementaryOS的时候尝试安装过一次，原地爆炸，重启之后就黑屏，再也见不到第二天的太阳，现在看起来就不会那么惨了。<br>首先需要启用Fedora的no-free仓库<br><code>sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm</code><br>因为N卡驱动不是开源的，所以需要no-free的仓库，启用后使用下面的命令安装驱动：  </p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install akmod-nvidia</span><br><span class="line">sudo dnf mark user akmod-nvidia</span><br></pre></td></tr></table></div></figure>
+<p><strong>mark user</strong> 的作用是标记为用户安装，让驱动不要被意外删除。<br>如果直接安装的话，需要关闭SecureBoot才能起作用。我这里一直都没有打开，所以就先这样了。<br>如果要启用SecureBoot并且还要装驱动的话，需要把密钥导入到UEFI中，具体可以看<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/1904281445544989652" >这篇文档</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>  </p>
+
+        <h2 id="安装Steam"   >
+          <a href="#安装Steam" class="heading-link"><i class="fas fa-link"></i></a><a href="#安装Steam" class="headerlink" title="安装Steam"></a>安装Steam</h2>
+      <p><del>游戏就是电子鸦片，而我们就是大烟鬼</del><br>Fedora不是Debian系软件，不支持deb安装包。Steam官网只提供了一个deb包，所以从官网下载看起来是没戏了。<br>不过好在，Fedora官方就支持安装Steam，甚至专门出了一篇文档。<br><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://docs.fedoraproject.org/en-US/gaming/proton/" >Steam Installation</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>这里精简一下，大致就是启用no-free仓库，然后就可以直接<code>sudo dnf install steam</code>了<br>但是我这里遇到了一个问题，在安装后，点击Steam图标，Steam并没有加载，也没有报错，就好像卡住了一样。但是我总觉得有那儿不对劲。然后打开活动管理器，发现Steam正占用着网络流量。我猜想应该是UI出了问题，正在下载更新但没有显示，所以我等待了一会儿，大概半个小时之后，Steam的登录界面才终于出现。<br>Fedora官方文档上有写着一个命令，或许可以解决这个问题：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__GL_CONSTANT_FRAME_RATE_HINT=3 steam</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="QQ和微信"   >
+          <a href="#QQ和微信" class="heading-link"><i class="fas fa-link"></i></a><a href="#QQ和微信" class="headerlink" title="QQ和微信"></a>QQ和微信</h2>
+      <p>Linux的QQ支持真的是非常好，安装QQ的过程没有什么好说的，全程都很流畅。唯独有一个会漏字的问题，在上面已经有了解决方案。所以大概没什么问题。<br>Linux的微信总体还是好的，但有打不出字的情况，根据网上的文档，右键微信图标，使用<strong>编辑应用程序</strong>即可打开微信的详细设置。<br>随后，环境变量里填入：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS=@im=fcitx XIM=fcitx</span><br></pre></td></tr></table></div></figure>
+<p>其实就是上面的同款，填入之后就可以正常打字了。</p>
+
+        <h2 id="QQ音乐"   >
+          <a href="#QQ音乐" class="heading-link"><i class="fas fa-link"></i></a><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a>QQ音乐</h2>
+      <p>这个值得说道说道。QQ音乐目前有一个Linux版本，但安装后需要加额外参数才能启动，功能不全，且我安装后几乎所有的中文文字都变成了方块，不知道有没有解决方法，但我最后没有使用Linux版本。<br>我直接使用了Wine。  </p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install wine</span><br></pre></td></tr></table></div></figure>
+<p>因为原先的Windows系统还没有删除，所以我直接使用了Windows用的QQ音乐。<br>刚安装的时候到处都在错位，但只要<strong>把硬件加速关掉</strong>，一切都变得正常起来了。<br>效果意料之外的好，QQ音乐的几乎所有功能都能正常使用，只是有一部分功能会出现细微的bug，整体稳定性也略差，但比Linux的阉割版本实在是好太多了。<br>存在几个问题：  </p>
+<ul>
+<li>输入法不能正常使用  </li>
+<li>主界面有黑边  </li>
+<li>播放队列只能打开一次。</li>
+</ul>
+<p>前两个都好说，第一个依然是上面的四条环境变量，第二个只有一点视觉错误，但不是很影响。第三个就比较麻烦了，因为播放队列在关掉之后，无论怎么点都再也打不开，等于缺了一个功能。不过我探索了一阵，发现可以开启精简模式，让QQ音乐缩成一个小东西，这里可以点开播放队列，并且可以正常展开和关闭。如果要用播放队列的话就暂时用这个吧。<br><img src="/image/qqmusic0.jpg"><br><img src="/image/qqmusic1.jpg"><br>算下来也是全功能的QQ音乐了，虽然稳定性堪忧，但一个音乐软件，只要能老老实实待在后台放音乐就好，也不需要它有什么很Fashion的功能了，正常使用不会突然崩溃就行。  </p>
+</div><footer class="post-footer"><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2025/07/06/053446/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">Steam Proton 配置</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2025/07/05/165109/"><span class="paginator-prev__text">Linux的各个发行版</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E8%BE%93%E5%85%A5%E6%B3%95"><span class="toc-text">
+          安装输入法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NVidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8"><span class="toc-text">
+          NVidia显卡驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Steam"><span class="toc-text">
+          安装Steam</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QQ%E5%92%8C%E5%BE%AE%E4%BF%A1"><span class="toc-text">
+          QQ和微信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QQ%E9%9F%B3%E4%B9%90"><span class="toc-text">
+          QQ音乐</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://avatars.githubusercontent.com/u/25215643?v=4" alt="avatar"></div><p class="sidebar-ov-author__text">JackMyth</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/Jack-Myth" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="mailto:jackmyth@foxmail.com" target="_blank" rel="noopener" data-popover="social.FoxMail" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">Mail</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">15</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">1</div><div class="sidebar-ov-state-item__name">分类</div></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2025</span><span class="footer__devider"></span><span>JackMyth</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span></div><div>Hosted on <a href="https://pages.github.com/" rel="noopener" target="_blank">Github Pages</a></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script></body></html>
